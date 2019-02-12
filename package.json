@@ -1,15 +1,15 @@
 {
-  "name": "@cknow/nuxt-eslint-module",
+  "name": "@nuxtjs/eslint-module",
   "version": "0.0.1",
   "description": "ESLint will run on saving.",
   "license": "MIT",
   "contributors": [
     {
-      "name": "Ricardo Gobbo de Souza <ricardo@clicknow.com.br>"
+      "name": "Ricardo Gobbo de Souza <ricardogobbosouza@yahoo.com.br>"
     }
   ],
   "main": "lib/module.js",
-  "repository": "https://github.com/cknow/nuxt-eslint-module",
+  "repository": "https://github.com/nuxt-community/eslint-module",
   "publishConfig": {
     "access": "public"
   },

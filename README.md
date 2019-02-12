@@ -1,4 +1,4 @@
-# Nuxt ESLint Module
+# ESLint Module
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -13,15 +13,15 @@
 
 ## Setup
 
-1. Add `@cknow/nuxt-eslint-module` dependency with `yarn` or `npm` into your project
-2. Add `@cknow/nuxt-eslint-module` to `modules` section of `nuxt.config.js`
+1. Add `@nuxtjs/eslint-module` dependency with `yarn` or `npm` into your project
+2. Add `@nuxtjs/eslint-module` to `modules` section of `nuxt.config.js`
 3. Configure it:
 
 ```js
 {
   modules: [
     // Simple usage
-    '@cknow/nuxt-eslint-module',
+    '@nuxtjs/eslint-module',
  ]
 }
 ```
@@ -36,23 +36,23 @@
 
 [MIT License](./LICENSE)
 
-Copyright (c) Ricardo Gobbo de Souza <ricardo@clicknow.com.br>
+Copyright (c) Nuxt Community
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/dt/@cknow/nuxt-eslint-module.svg?style=flat-square
-[npm-version-href]: https://npmjs.com/package/@cknow/nuxt-eslint-module
+[npm-version-src]: https://img.shields.io/npm/dt/@nuxtjs/eslint-module.svg?style=flat-square
+[npm-version-href]: https://npmjs.com/package/@nuxtjs/eslint-module
 
-[npm-downloads-src]: https://img.shields.io/npm/v/@cknow/nuxt-eslint-module/latest.svg?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/@cknow/nuxt-eslint-module
+[npm-downloads-src]: https://img.shields.io/npm/v/@nuxtjs/eslint-module/latest.svg?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/eslint-module
 
-[circle-ci-src]: https://img.shields.io/circleci/project/github/cknow/nuxt-eslint-module.svg?style=flat-square
-[circle-ci-href]: https://circleci.com/gh/cknow/nuxt-eslint-module
+[circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/eslint-module.svg?style=flat-square
+[circle-ci-href]: https://circleci.com/gh/nuxt-community/eslint-module
 
-[codecov-src]: https://img.shields.io/codecov/c/github/cknow/nuxt-eslint-module.svg?style=flat-square
-[codecov-href]: https://codecov.io/gh/cknow/nuxt-eslint-module
+[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/eslint-module.svg?style=flat-square
+[codecov-href]: https://codecov.io/gh/nuxt-community/eslint-module
 
-[david-dm-src]: https://david-dm.org/cknow/nuxt-eslint-module/status.svg?style=flat-square
-[david-dm-href]: https://david-dm.org/cknow/nuxt-eslint-module
+[david-dm-src]: https://david-dm.org/nuxt-community/eslint-module/status.svg?style=flat-square
+[david-dm-href]: https://david-dm.org/nuxt-community/eslint-module
 
 [standard-js-src]: https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square
 [standard-js-href]: https://standardjs.com
