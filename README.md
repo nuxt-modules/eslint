@@ -20,8 +20,8 @@
 ```js
 {
   modules: [
-    '@nuxtjs/eslint-module',
- ]
+    '@nuxtjs/eslint-module'
+  ]
 }
 ```
 
