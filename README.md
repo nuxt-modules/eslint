@@ -20,7 +20,6 @@
 ```js
 {
   modules: [
-    // Simple usage
     '@nuxtjs/eslint-module',
  ]
 }
