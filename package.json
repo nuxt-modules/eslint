@@ -15,7 +15,7 @@
   },
   "scripts": {
     "dev": "nuxt example",
-    "lint": "eslint lib test",
+    "lint": "eslint example lib test",
     "test": "yarn lint && jest",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish"
   },
