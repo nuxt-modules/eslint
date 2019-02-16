@@ -4,7 +4,7 @@ const { Nuxt, Builder } = require('nuxt-edge')
 const request = require('request-promise-native')
 const getPort = require('get-port')
 
-const config = require('../example/nuxt.config')
+const config = require('./fixture/nuxt.config')
 
 let nuxt, port
 
