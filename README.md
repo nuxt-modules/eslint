@@ -7,7 +7,7 @@
 [![Dependencies][david-dm-src]][david-dm-href]
 [![Standard JS][standard-js-src]][standard-js-href]
 
-> ESLint will run on saving.
+> ESLint will run on saving
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
