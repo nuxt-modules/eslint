@@ -13,8 +13,8 @@
 
 ## Setup
 
-1. Add `@nuxtjs/eslint-module` dependency with `yarn` or `npm` into your project
-2. Add `@nuxtjs/eslint-module` to `modules` section of `nuxt.config.js`
+1. Add the `@nuxtjs/eslint-module` dependency with `yarn` or `npm` into your project
+2. Add `@nuxtjs/eslint-module` to the `modules` section of `nuxt.config.js`
 3. Configure it:
 
 ```js
