@@ -5,6 +5,8 @@ const request = require('request-promise-native')
 const getPort = require('get-port')
 
 const config = require('./fixture/nuxt.config')
+config.dev = true
+config.debug = true
 
 let nuxt, port
 
@@ -13,8 +15,6 @@ const get = path => request(url(path))
 
 describe('module', () => {
   beforeAll(async () => {
-    config.dev = true
-    config.debug = true
     nuxt = new Nuxt(config)
     await new Builder(nuxt).build()
     port = await getPort()
