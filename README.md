@@ -19,9 +19,9 @@
 
 ```js
 {
-  devModules: [
-    '@nuxtjs/eslint-module'
-  ]
+  eslint: {
+    fix: true // --fix
+  }
 }
 ```
 
