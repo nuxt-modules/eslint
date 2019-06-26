@@ -21,6 +21,7 @@
     "lib"
   ],
   "dependencies": {
+    "consola": "^2.9.0",
     "eslint-loader": "^2.1.2"
   },
   "devDependencies": {
