@@ -4,7 +4,8 @@
   "description": "ESLint will run on saving",
   "license": "MIT",
   "contributors": [
-    "Ricardo Gobbo de Souza <ricardogobbosouza@yahoo.com.br>"
+    "Ricardo Gobbo de Souza <ricardogobbosouza@yahoo.com.br>",
+    "Vinayak Kulkarni <vinayak.kulkarni@live.com>"
   ],
   "main": "lib/module.js",
   "repository": "https://github.com/nuxt-community/eslint-module",
@@ -14,6 +15,7 @@
   "scripts": {
     "dev": "nuxt test/fixture",
     "lint": "eslint lib test",
+    "lintfix": "eslint --fix lib test",
     "test": "yarn lint && jest",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish"
   },
