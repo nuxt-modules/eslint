@@ -1,6 +1,23 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.1.0](https://github.com/nuxt-community/eslint-module/compare/v0.0.1...v0.1.0) (2019-06-27)
+
+
+### Features
+
+* add options ([f1c9ebd](https://github.com/nuxt-community/eslint-module/commit/f1c9ebd))
+* check if `eslint` is available ([#4](https://github.com/nuxt-community/eslint-module/issues/4)) ([5b8ef02](https://github.com/nuxt-community/eslint-module/commit/5b8ef02))
+
+
+### Tests
+
+* split tests in files ([55dc81b](https://github.com/nuxt-community/eslint-module/commit/55dc81b))
+* **module:** move `example` to `test/fixture` ([b98ec30](https://github.com/nuxt-community/eslint-module/commit/b98ec30))
+* **module:** use `get-port` ([ca93060](https://github.com/nuxt-community/eslint-module/commit/ca93060))
+
+
 
 <a name="0.0.1"></a>
 ## 0.0.1 (2019-02-12)
