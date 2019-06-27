@@ -25,6 +25,48 @@
 }
 ```
 
+## Options
+
+### `fix`
+
+- Default: `false`
+
+This option will enable [ESLint autofix feature](http://eslint.org/docs/user-guide/command-line-interface#fix).
+
+**Be careful: this option will change source files.**
+
+### `emitError`
+
+- Default: `false`
+
+Loader will always return errors if this option is set to `true`.
+
+### `emitWarning`
+
+- Default: `false`
+
+Loader will always return warnings if option is set to `true`. If you're using hot module replacement, you may wish to enable this in development, or else updates will be skipped when there's an eslint error.
+
+### `quiet`
+
+- Default: `false`
+
+Loader will process and report errors only and ignore warnings if this option is set to true
+
+### `failOnWarning`
+
+- Default: `false`
+
+Loader will cause the module build to fail if there are any eslint warnings.
+
+#### `failOnError`
+
+- Default: `false`
+
+Loader will cause the module build to fail if there are any eslint errors.
+
+> See all options in [eslint-loader](https://github.com/webpack-contrib/eslint-loader#options).
+
 ## Development
 
 1. Clone this repository
