@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/eslint-module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "ESLint will run on saving",
   "license": "MIT",
   "contributors": [
