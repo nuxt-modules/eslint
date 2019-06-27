@@ -27,14 +27,6 @@
 
 ## Options
 
-### `fix`
-
-- Default: `false`
-
-This option will enable [ESLint autofix feature](http://eslint.org/docs/user-guide/command-line-interface#fix).
-
-**Be careful: this option will change source files.**
-
 ### `emitError`
 
 - Default: `false`
@@ -59,11 +51,19 @@ Loader will process and report errors only and ignore warnings if this option is
 
 Loader will cause the module build to fail if there are any eslint warnings.
 
-#### `failOnError`
+### `failOnError`
 
 - Default: `false`
 
 Loader will cause the module build to fail if there are any eslint errors.
+
+### `fix`
+
+- Default: `false`
+
+This option will enable [ESLint autofix feature](http://eslint.org/docs/user-guide/command-line-interface#fix).
+
+**Be careful: this option will change source files.**
 
 > See all options in [eslint-loader](https://github.com/webpack-contrib/eslint-loader#options).
 
