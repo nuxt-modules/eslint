@@ -1,6 +1,7 @@
 jest.setTimeout(60000)
 
 const { Nuxt, Builder } = require('nuxt-edge')
+const { waitFor } = require('@nuxt/utils-edge')
 const request = require('request-promise-native')
 const getPort = require('get-port')
 
@@ -18,6 +19,7 @@ describe('dev', () => {
     nuxt = new Nuxt(config)
     await nuxt.ready()
     await new Builder(nuxt).build()
+    await waitFor(2000)
     port = await getPort()
     await nuxt.listen(port)
   })
