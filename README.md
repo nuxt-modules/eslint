@@ -16,7 +16,7 @@
 1. Add `@nuxtjs/eslint-module` dependency to your project
 
 ```bash
-npm install --save-dev @nuxtjs/eslint-module # or yarn add --dev @nuxtjs/eslint-module
+yarn add --dev @nuxtjs/eslint-module # or npm install --save-dev @nuxtjs/eslint-module
 ```
 
 2. Add `@nuxtjs/eslint-module` to the `devModules` section of `nuxt.config.js`
