@@ -122,6 +122,8 @@ You can pass in a different formatter for the output file, if none is passed in 
 
 Loader will process and report errors only and ignore warnings if this option is set to true.
 
+> See all options in [eslint-loader](https://github.com/webpack-contrib/eslint-loader#options).
+
 ## Development
 
 1. Clone this repository
