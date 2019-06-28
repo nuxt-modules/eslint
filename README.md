@@ -7,25 +7,58 @@
 [![Dependencies][david-dm-src]][david-dm-href]
 [![Standard JS][standard-js-src]][standard-js-href]
 
-> ESLint will run on saving
+> [ESLint](https://eslint.org) module for [Nuxt.js](https://nuxtjs.org)
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
 ## Setup
 
-1. Add the `@nuxtjs/eslint-module` dependency with `yarn` or `npm` to your project
+1. Add `@nuxtjs/eslint-module` dependency to your project
+
+```bash
+npm install --save-dev @nuxtjs/eslint-module # or yarn add --dev @nuxtjs/eslint-module
+```
+
 2. Add `@nuxtjs/eslint-module` to the `devModules` section of `nuxt.config.js`
-3. Configure it:
+
+```js
+{
+  devModules: [
+    // Simple usage
+    '@nuxtjs/eslint-module',
+
+    // With options
+    ['@nuxtjs/eslint-module', { /* module options */ }]
+  ]
+}
+```
+
+### Using top level options
 
 ```js
 {
   devModules: [
     '@nuxtjs/eslint-module'
-  ]
+  ],
+  eslint: {
+    /* module options */
+  }
 }
 ```
 
 ## Options
+
+### `cache`
+
+- Default: `false`
+
+This option will enable caching of the linting results into a file.
+This is particularly useful in reducing linting time when doing a full build.
+
+This can either be a `boolean` value or the cache directory path(ex: `'./.eslint-loader-cache'`).
+
+If `cache: true` is used, the cache file is written to the `./node_modules/.cache` directory.
+This is the recommended usage.
 
 ### `emitError`
 
@@ -39,17 +72,12 @@ Loader will always return errors if this option is set to `true`.
 
 Loader will always return warnings if option is set to `true`. If you're using hot module replacement, you may wish to enable this in development, or else updates will be skipped when there's an eslint error.
 
-### `quiet`
+### `eslintPath`
 
-- Default: `false`
+- Default: `'eslint'`
 
-Loader will process and report errors only and ignore warnings if this option is set to true
-
-### `failOnWarning`
-
-- Default: `false`
-
-Loader will cause the module build to fail if there are any eslint warnings.
+Path to `eslint` instance that will be used for linting.
+If the `eslintPath` is a folder like a official eslint, or specify a `formatter` option. now you dont have to install `eslint`.
 
 ### `failOnError`
 
@@ -57,13 +85,42 @@ Loader will cause the module build to fail if there are any eslint warnings.
 
 Loader will cause the module build to fail if there are any eslint errors.
 
-### `fix`
+### `failOnWarning`
+
+- Default: `false`
+
+Loader will cause the module build to fail if there are any eslint warnings.
+
+#### `fix`
 
 - Default: `false`
 
 This option will enable [ESLint autofix feature](http://eslint.org/docs/user-guide/command-line-interface#fix).
 
 **Be careful: this option will change source files.**
+
+### `formatter`
+
+- Default: `eslint stylish formatter`
+
+Loader accepts a function that will have one argument: an array of eslint messages (object).
+The function must return the output as a string.
+You can use official eslint formatters.
+
+### `outputReport`
+
+- Default: `false`
+
+Write the output of the errors to a file, for example a checkstyle xml file for use for reporting on Jenkins CI.
+
+The `filePath` is relative to the webpack config: output.path.
+You can pass in a different formatter for the output file, if none is passed in the default/configured formatter will be used.
+
+### `quiet`
+
+- Default: `false`
+
+Loader will process and report errors only and ignore warnings if this option is set to true.
 
 > See all options in [eslint-loader](https://github.com/webpack-contrib/eslint-loader#options).
 
