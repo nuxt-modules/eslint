@@ -11,6 +11,14 @@
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
+## Requirements
+
+You need to ensure that you have `eslint` installed
+
+```bash
+yarn add --dev eslint # or npm install --save-dev eslint
+```
+
 ## Setup
 
 1. Add `@nuxtjs/eslint-module` dependency to your project

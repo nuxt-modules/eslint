@@ -48,5 +48,8 @@
     "request": "latest",
     "request-promise-native": "latest",
     "standard-version": "latest"
+  },
+  "peerDependencies": {
+    "eslint": ">=1.6.0 <7.0.0"
   }
 }
