@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/nuxt-community/eslint-module/compare/v0.2.0...v0.2.1) (2019-07-01)
+
+
+### Bug Fixes
+
+* add `eslint` in `peerDependencies` ([a17990d](https://github.com/nuxt-community/eslint-module/commit/a17990d))
+
+
+
 ## [0.2.0](https://github.com/nuxt-community/eslint-module/compare/v0.1.0...v0.2.0) (2019-06-27)
 
 
