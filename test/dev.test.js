@@ -7,7 +7,6 @@ const getPort = require('get-port')
 
 const config = require('./fixture/nuxt.config')
 config.dev = true
-config.debug = true
 
 let nuxt, port
 
