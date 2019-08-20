@@ -26,11 +26,13 @@ yarn add --dev eslint # or npm install --save-dev eslint
 yarn add --dev @nuxtjs/eslint-module # or npm install --save-dev @nuxtjs/eslint-module
 ```
 
-2. Add `@nuxtjs/eslint-module` to the `devModules` section of `nuxt.config.js`
+2. Add `@nuxtjs/eslint-module` to the `buildModules` section of `nuxt.config.js`
+
+:warning: If you are using Nuxt `< 2.9.0`, use `modules` instead.
 
 ```js
 {
-  devModules: [
+  buildModules: [
     // Simple usage
     '@nuxtjs/eslint-module',
 
@@ -44,7 +46,7 @@ yarn add --dev @nuxtjs/eslint-module # or npm install --save-dev @nuxtjs/eslint-
 
 ```js
 {
-  devModules: [
+  buildModules: [
     '@nuxtjs/eslint-module'
   ],
   eslint: {
