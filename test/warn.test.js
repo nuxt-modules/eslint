@@ -1,9 +1,6 @@
-jest.setTimeout(60000)
-
-const { Nuxt } = require('nuxt-edge')
+const { init, loadConfig } = require('@nuxtjs/module-test-utils')
 const logger = require('../lib/logger')
 const { moduleExists } = require('../lib/utils')
-const config = require('./fixture/nuxt.config')
 
 logger.mockTypes(() => jest.fn())
 
@@ -11,15 +8,13 @@ jest.mock('../lib/utils', () => ({
   moduleExists: jest.fn()
 }))
 
-let nuxt
-
 describe('warn', () => {
+  let nuxt
+
   beforeAll(async () => {
     moduleExists.mockImplementation(() => false)
-
-    nuxt = new Nuxt(config)
-    await nuxt.ready()
-  })
+    nuxt = await init(loadConfig(__dirname))
+  }, 60000)
 
   beforeEach(() => {
     logger.clear()

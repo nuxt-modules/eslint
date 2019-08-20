@@ -1,25 +1,12 @@
-jest.setTimeout(60000)
-
-const { Nuxt, Builder } = require('nuxt-edge')
-const request = require('request-promise-native')
-const getPort = require('get-port')
-
-const config = require('./fixture/nuxt.config')
-config.dev = false
-
-let nuxt, port
-
-const url = path => `http://localhost:${port}${path}`
-const get = path => request(url(path))
+const { setup, loadConfig, get } = require('@nuxtjs/module-test-utils')
+const config = loadConfig(__dirname, null, { dev: false })
 
 describe('prod', () => {
+  let nuxt
+
   beforeAll(async () => {
-    nuxt = new Nuxt(config)
-    await nuxt.ready()
-    await new Builder(nuxt).build()
-    port = await getPort()
-    await nuxt.listen(port)
-  })
+    ({ nuxt } = (await setup(config, { waitFor: 2000 })))
+  }, 60000)
 
   afterAll(async () => {
     await nuxt.close()
