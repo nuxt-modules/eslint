@@ -7,7 +7,7 @@ module.exports = {
   render: {
     resourceHints: false
   },
-  devModules: [
+  buildModules: [
     { handler: require('../../') }
   ]
 }
