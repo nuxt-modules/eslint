@@ -1,6 +1,7 @@
 const { init, loadConfig } = require('@nuxtjs/module-test-utils')
-const logger = require('../lib/logger')
+
 const { moduleExists } = require('../lib/utils')
+const logger = require('../lib/logger')
 
 logger.mockTypes(() => jest.fn())
 

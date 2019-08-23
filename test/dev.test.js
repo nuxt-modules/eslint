@@ -1,11 +1,10 @@
 const { setup, loadConfig, get } = require('@nuxtjs/module-test-utils')
-const config = loadConfig(__dirname, null, { dev: true })
 
 describe('dev', () => {
   let nuxt
 
   beforeAll(async () => {
-    ({ nuxt } = (await setup(config, { waitFor: 2000 })))
+    ({ nuxt } = (await setup(loadConfig(__dirname, null, { dev: true }), { waitFor: 2000 })))
   }, 60000)
 
   afterAll(async () => {

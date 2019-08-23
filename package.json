@@ -2,24 +2,21 @@
   "name": "@nuxtjs/eslint-module",
   "version": "1.0.0",
   "description": "ESLint module for Nuxt.js",
+  "repository": "nuxt-community/eslint-module",
   "license": "MIT",
   "contributors": [
     "Ricardo Gobbo de Souza <ricardogobbosouza@yahoo.com.br>"
   ],
-  "main": "lib/module.js",
-  "repository": "nuxt-community/eslint-module",
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "dev": "nuxt test/fixture",
-    "lint": "eslint --ext .js,.vue lib test",
-    "test": "yarn lint && jest",
-    "release": "yarn test && standard-version && git push --follow-tags && npm publish"
-  },
   "files": [
     "lib"
   ],
+  "main": "lib/module.js",
+  "scripts": {
+    "dev": "nuxt test/fixture",
+    "lint": "eslint --ext .js,.vue .",
+    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
+    "test": "yarn lint && jest"
+  },
   "dependencies": {
     "consola": "^2.10.1",
     "eslint-loader": "^2.2.1"
@@ -38,5 +35,8 @@
   },
   "peerDependencies": {
     "eslint": ">=1.6.0 <7.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
