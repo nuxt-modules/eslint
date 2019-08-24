@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "consola": "^2.10.1",
-    "eslint-loader": "^2.2.1"
+    "eslint-loader": "^3.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
