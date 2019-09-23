@@ -57,6 +57,12 @@ yarn add --dev @nuxtjs/eslint-module # or npm install --save-dev @nuxtjs/eslint-
 
 ## Options
 
+### `extensions`
+
+- Default: `['ts', 'js', 'vue']`
+
+Extensions that will be used by the loader.
+
 ### `cache`
 
 - Default: `false`
