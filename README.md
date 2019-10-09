@@ -12,7 +12,7 @@
 
 ## Requirements
 
-You need to ensure that you have `eslint` installed
+You need to ensure that you have `eslint` installed:
 
 ```bash
 yarn add --dev eslint # or npm install --save-dev eslint
@@ -28,10 +28,10 @@ yarn add --dev @nuxtjs/eslint-module # or npm install --save-dev @nuxtjs/eslint-
 
 2. Add `@nuxtjs/eslint-module` to the `buildModules` section of `nuxt.config.js`
 
-:warning: If you are using Nuxt `< 2.9.0`, use `modules` instead.
+:warning: If you are using Nuxt older than **v2.9** you have to install module as a `dependency` (No `--dev` or `--save-dev` flags) and also use `modules` section in `nuxt.config.js` instead of `buildModules`.
 
 ```js
-{
+export default {
   buildModules: [
     // Simple usage
     '@nuxtjs/eslint-module',
@@ -45,7 +45,7 @@ yarn add --dev @nuxtjs/eslint-module # or npm install --save-dev @nuxtjs/eslint-
 ### Using top level options
 
 ```js
-{
+export default {
   buildModules: [
     '@nuxtjs/eslint-module'
   ],
@@ -57,14 +57,9 @@ yarn add --dev @nuxtjs/eslint-module # or npm install --save-dev @nuxtjs/eslint-
 
 ## Options
 
-### `extensions`
-
-- Default: `['ts', 'js', 'vue']`
-
-Extensions that will be used by the loader.
-
 ### `cache`
 
+- Type: `Boolean|String`
 - Default: `false`
 
 This option will enable caching of the linting results into a file.
@@ -75,67 +70,92 @@ This can either be a `boolean` value or the cache directory path(ex: `'./.eslint
 If `cache: true` is used, the cache file is written to the `./node_modules/.cache` directory.
 This is the recommended usage.
 
-### `emitError`
-
-- Default: `false`
-
-Loader will always return errors if this option is set to `true`.
-
-### `emitWarning`
-
-- Default: `false`
-
-Loader will always return warnings if option is set to `true`. If you're using hot module replacement, you may wish to enable this in development, or else updates will be skipped when there's an eslint error.
-
 ### `eslintPath`
 
-- Default: `'eslint'`
+- Type: `String`
+- Default: `eslint`
 
 Path to `eslint` instance that will be used for linting.
-If the `eslintPath` is a folder like a official eslint, or specify a `formatter` option. now you dont have to install `eslint`.
+If the `eslintPath` is a folder like a official eslint, or specify a `formatter` option.
+now you dont have to install `eslint`.
 
-### `failOnError`
+### `extensions`
 
-- Default: `false`
+- Type: `Array[String]`
+- Default: `['ts', 'js', 'vue']`
 
-Loader will cause the module build to fail if there are any eslint errors.
-
-### `failOnWarning`
-
-- Default: `false`
-
-Loader will cause the module build to fail if there are any eslint warnings.
-
-#### `fix`
-
-- Default: `false`
-
-This option will enable [ESLint autofix feature](http://eslint.org/docs/user-guide/command-line-interface#fix).
-
-**Be careful: this option will change source files.**
+Extensions that will be used by the loader.
 
 ### `formatter`
 
-- Default: `eslint stylish formatter`
+- Type: `String|Function`
+- Default: `stylish`
 
-Loader accepts a function that will have one argument: an array of eslint messages (object).
+This option accepts a function that will have one argument: an array of eslint messages (object).
 The function must return the output as a string.
-You can use official eslint formatters.
+You can use official [eslint formatters](https://eslint.org/docs/user-guide/formatters/).
 
-### `outputReport`
+### `fix`
 
+- Type: `Boolean`
+- Default: `false`
+
+This option will enable
+[ESLint autofix feature](http://eslint.org/docs/user-guide/command-line-interface#fix).
+
+**Be careful: this option will change source files.**
+
+### Errors and Warning
+
+**By default the loader will auto adjust error reporting depending
+on eslint errors/warnings counts.**
+You can still force this behavior by using `emitError` **or** `emitWarning` options:
+
+#### `emitError`
+
+- Type: `Boolean`
+- Default: `false`
+
+Will always return errors, if this option is set to `true`.
+
+#### `emitWarning`
+
+- Type: `Boolean`
+- Default: `false`
+
+Will always return warnings, if option is set to `true`.
+
+#### `failOnError`
+
+- Type: `Boolean`
+- Default: `false`
+
+Will cause the module build to fail if there are any errors, if option is set to `true`.
+
+#### `failOnWarning`
+
+- Type: `Boolean`
+- Default: `false`
+
+Will cause the module build to fail if there are any warnings, if option is set to `true`.
+
+#### `quiet`
+
+- Type: `Boolean`
+- Default: `false`
+
+Will process and report errors only and ignore warnings, if this option is set to `true`.
+
+#### `outputReport`
+
+- Type: `Boolean|Object`
 - Default: `false`
 
 Write the output of the errors to a file, for example a checkstyle xml file for use for reporting on Jenkins CI.
 
-The `filePath` is relative to the webpack config: output.path.
-You can pass in a different formatter for the output file, if none is passed in the default/configured formatter will be used.
-
-### `quiet`
-
-- Default: `false`
-
-Loader will process and report errors only and ignore warnings if this option is set to true.
+The `filePath` is an absolute path or relative to the webpack config: `output.path`.
+You can pass in a different `formatter` for the output file,
+if none is passed in the default/configured formatter will be used.
 
 > See all options in [eslint-loader](https://github.com/webpack-contrib/eslint-loader#options).
 
