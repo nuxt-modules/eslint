@@ -57,27 +57,27 @@ export default {
 
 ## Options
 
+You can pass [eslint options](http://eslint.org/docs/developer-guide/nodejs-api#cliengine).
+
+**Note**: That the config option you provide will be passed to the `CLIEngine`. This is a different set of options than what you'd specify in `package.json` or `.eslintrc`. See the [eslint docs](http://eslint.org/docs/developer-guide/nodejs-api#cliengine) for more detail.
+
 ### `cache`
 
 - Type: `Boolean|String`
 - Default: `false`
 
-This option will enable caching of the linting results into a file.
-This is particularly useful in reducing linting time when doing a full build.
+This option will enable caching of the linting results into a file. This is particularly useful in reducing linting time when doing a full build.
 
 This can either be a `boolean` value or the cache directory path(ex: `'./.eslint-loader-cache'`).
 
-If `cache: true` is used, the cache file is written to the `./node_modules/.cache` directory.
-This is the recommended usage.
+If `cache: true` is used, the cache is written to the `./node_modules/.cache/eslint-loader` directory. This is the recommended usage.
 
 ### `eslintPath`
 
 - Type: `String`
 - Default: `eslint`
 
-Path to `eslint` instance that will be used for linting.
-If the `eslintPath` is a folder like a official eslint, or specify a `formatter` option.
-now you dont have to install `eslint`.
+Path to `eslint` instance that will be used for linting. If the `eslintPath` is a folder like a official eslint, or specify a `formatter` option. Now you dont have to install `eslint`.
 
 ### `extensions`
 
@@ -86,30 +86,25 @@ now you dont have to install `eslint`.
 
 Extensions that will be used by the loader.
 
-### `formatter`
-
-- Type: `String|Function`
-- Default: `stylish`
-
-This option accepts a function that will have one argument: an array of eslint messages (object).
-The function must return the output as a string.
-You can use official [eslint formatters](https://eslint.org/docs/user-guide/formatters/).
-
 ### `fix`
 
 - Type: `Boolean`
 - Default: `false`
 
-This option will enable
-[ESLint autofix feature](http://eslint.org/docs/user-guide/command-line-interface#fix).
+This option will enable [ESLint autofix feature](http://eslint.org/docs/user-guide/command-line-interface#fix).
 
 **Be careful: this option will change source files.**
 
+### `formatter`
+
+- Type: `String|Function`
+- Default: `stylish`
+
+This option accepts a function that will have one argument: an array of eslint messages (object). The function must return the output as a string. You can use official [eslint formatters](https://eslint.org/docs/user-guide/formatters/).
+
 ### Errors and Warning
 
-**By default the loader will auto adjust error reporting depending
-on eslint errors/warnings counts.**
-You can still force this behavior by using `emitError` **or** `emitWarning` options:
+**By default the loader will auto adjust error reporting depending on eslint errors/warnings counts.** You can still force this behavior by using `emitError` **or** `emitWarning` options:
 
 #### `emitError`
 
@@ -153,11 +148,7 @@ Will process and report errors only and ignore warnings, if this option is set t
 
 Write the output of the errors to a file, for example a checkstyle xml file for use for reporting on Jenkins CI.
 
-The `filePath` is an absolute path or relative to the webpack config: `output.path`.
-You can pass in a different `formatter` for the output file,
-if none is passed in the default/configured formatter will be used.
-
-> See all options in [eslint-loader](https://github.com/webpack-contrib/eslint-loader#options).
+The `filePath` is an absolute path or relative to the webpack config: `output.path`. You can pass in a different `formatter` for the output file, if none is passed in the default/configured formatter will be used.
 
 ## Development
 
