@@ -18,7 +18,7 @@
     "test": "yarn lint && jest"
   },
   "dependencies": {
-    "consola": "^2.11.2",
+    "consola": "^2.11.3",
     "eslint-loader": "^3.0.3"
   },
   "devDependencies": {
