@@ -28,8 +28,6 @@ yarn add --dev @nuxtjs/eslint-module # or npm install --save-dev @nuxtjs/eslint-
 
 2. Add `@nuxtjs/eslint-module` to the `buildModules` section of `nuxt.config.js`
 
-:warning: If you are using Nuxt older than **v2.9** you have to install module as a `dependency` (No `--dev` or `--save-dev` flags) and also use `modules` section in `nuxt.config.js` instead of `buildModules`.
-
 ```js
 export default {
   buildModules: [
@@ -41,6 +39,8 @@ export default {
   ]
 }
 ```
+
+:warning: If you are using Nuxt **< v2.9** you have to install the module as a `dependency` (No `--dev` or `--save-dev` flags) and use `modules` section in `nuxt.config.js` instead of `buildModules`.
 
 ### Using top level options
 
