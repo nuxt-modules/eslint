@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/nuxt-community/eslint-module/compare/v1.1.0...v1.2.0) (2020-04-24)
+
+
+### Features
+
+* new option `extensions` ([#17](https://github.com/nuxt-community/eslint-module/issues/17)) ([4093800](https://github.com/nuxt-community/eslint-module/commit/40938001c0d61bad3a1d16afd15c4eb114bda803))
+
 ## [1.1.0](https://github.com/nuxt-community/eslint-module/compare/v1.0.0...v1.1.0) (2019-09-13)
 
 ## [1.0.0](https://github.com/nuxt-community/eslint-module/compare/v0.2.1...v1.0.0) (2019-07-26)
