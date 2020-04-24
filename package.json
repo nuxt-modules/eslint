@@ -7,10 +7,10 @@
   "contributors": [
     "Ricardo Gobbo de Souza <ricardogobbosouza@yahoo.com.br>"
   ],
+  "main": "lib/module.js",
   "files": [
     "lib"
   ],
-  "main": "lib/module.js",
   "scripts": {
     "dev": "nuxt test/fixture",
     "lint": "eslint --ext .js,.vue .",
@@ -19,14 +19,13 @@
   },
   "dependencies": {
     "consola": "^2.11.3",
-    "eslint-loader": "^3.0.3"
+    "eslint-loader": "^4.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "@nuxtjs/eslint-config": "latest",
     "@nuxtjs/module-test-utils": "latest",
-    "codecov": "latest",
     "eslint": "latest",
     "husky": "latest",
     "jest": "latest",
