@@ -33,7 +33,7 @@
     "standard-version": "latest"
   },
   "peerDependencies": {
-    "eslint": "^5.0.0 || ^6.0.0"
+    "eslint": "^6.0.0"
   },
   "publishConfig": {
     "access": "public"
