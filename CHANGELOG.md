@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/nuxt-community/eslint-module/compare/v1.2.0...v2.0.0) (2020-05-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop support for eslint 5 ([2728ba1](https://github.com/nuxt-community/eslint-module/commit/2728ba1f5d932b7154c870d469885f05287c5bf6))
+
 ## [1.2.0](https://github.com/nuxt-community/eslint-module/compare/v1.1.0...v1.2.0) (2020-04-24)
 
 
