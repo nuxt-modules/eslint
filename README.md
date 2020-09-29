@@ -57,89 +57,113 @@ export default {
 
 ## Options
 
-You can pass [eslint options](http://eslint.org/docs/developer-guide/nodejs-api#cliengine).
+You can pass [eslint options](https://eslint.org/docs/developer-guide/nodejs-api#%E2%97%86-new-eslint-options).
 
-**Note**: That the config option you provide will be passed to the `CLIEngine`. This is a different set of options than what you'd specify in `package.json` or `.eslintrc`. See the [eslint docs](http://eslint.org/docs/developer-guide/nodejs-api#cliengine) for more detail.
+Note that the config option you provide will be passed to the `ESLint` class.
+This is a different set of options than what you'd specify in `package.json` or `.eslintrc`.
+See the [eslint docs](https://eslint.org/docs/developer-guide/nodejs-api#%E2%97%86-new-eslint-options) for more details.
 
-### `cache`
+**Warning**: In eslint-webpack-plugin version 1 the options were passed to the now deprecated [CLIEngine](https://eslint.org/docs/developer-guide/nodejs-api#cliengine).
 
-- Type: `Boolean|String`
-- Default: `false`
+### `cache``
 
-This option will enable caching of the linting results into a file. This is particularly useful in reducing linting time when doing a full build.
+- Type: `Boolean`
+- Default: `true`
 
-This can either be a `boolean` value or the cache directory path(ex: `'./.eslint-loader-cache'`).
+**Note**: The cache is enabled by default to decrease execution time.
 
-If `cache: true` is used, the cache is written to the `./node_modules/.cache/eslint-loader` directory. This is the recommended usage.
+### `context`
+
+- Type: `String`
+- Default: `compiler.context`
+
+A string indicating the root of your files.
 
 ### `eslintPath`
 
 - Type: `String`
 - Default: `eslint`
 
-Path to `eslint` instance that will be used for linting. If the `eslintPath` is a folder like a official eslint, or specify a `formatter` option. Now you dont have to install `eslint`.
+Path to `eslint` instance that will be used for linting. If the `eslintPath` is a folder like a official eslint, or specify a `formatter` option. now you dont have to install `eslint`.
+
+### `files`
+
+- Type: `String|Array[String]`
+- Default: `'.'`
+
+Specify directories, files, or globs. Must be relative to `options.context`.
+Directories are traveresed recursively looking for files matching `options.extensions`.
+File and glob patterns ignore `options.extensions`.
 
 ### `extensions`
 
-- Type: `Array[String]`
-- Default: `['ts', 'js', 'vue']`
+- Type: `String|Array[String]`
+- Default: `'js'`
 
-Extensions that will be used by the loader.
+Specify extensions that should be checked.
 
 ### `fix`
 
 - Type: `Boolean`
 - Default: `false`
 
-This option will enable [ESLint autofix feature](http://eslint.org/docs/user-guide/command-line-interface#fix).
+Will enable [ESLint autofix feature](https://eslint.org/docs/developer-guide/nodejs-api#%E2%97%86-eslint-outputfixes-results).
 
 **Be careful: this option will change source files.**
 
 ### `formatter`
 
 - Type: `String|Function`
-- Default: `stylish`
+- Default: `'stylish'`
 
-This option accepts a function that will have one argument: an array of eslint messages (object). The function must return the output as a string. You can use official [eslint formatters](https://eslint.org/docs/user-guide/formatters/).
+Accepts a function that will have one argument: an array of eslint messages (object). The function must return the output as a string. You can use official [eslint formatters](https://eslint.org/docs/user-guide/formatters/).
+
+### `lintDirtyModulesOnly`
+
+- Type: `Boolean`
+- Default: `false`
+
+Lint only changed files, skip lint on start.
 
 ### Errors and Warning
 
-**By default the loader will auto adjust error reporting depending on eslint errors/warnings counts.** You can still force this behavior by using `emitError` **or** `emitWarning` options:
+**By default the plugin will auto adjust error reporting depending on eslint errors/warnings counts.**
+You can still force this behavior by using `emitError` **or** `emitWarning` options:
 
 #### `emitError`
 
 - Type: `Boolean`
 - Default: `false`
 
-Will always return errors, if this option is set to `true`.
+Will always return errors, if set to `true`.
 
 #### `emitWarning`
 
 - Type: `Boolean`
 - Default: `false`
 
-Will always return warnings, if option is set to `true`.
+Will always return warnings, if set to `true`.
 
 #### `failOnError`
 
 - Type: `Boolean`
 - Default: `false`
 
-Will cause the module build to fail if there are any errors, if option is set to `true`.
+Will cause the module build to fail if there are any errors, if set to `true`.
 
 #### `failOnWarning`
 
 - Type: `Boolean`
 - Default: `false`
 
-Will cause the module build to fail if there are any warnings, if option is set to `true`.
+Will cause the module build to fail if there are any warnings, if set to `true`.
 
 #### `quiet`
 
 - Type: `Boolean`
 - Default: `false`
 
-Will process and report errors only and ignore warnings, if this option is set to `true`.
+Will process and report errors only and ignore warnings, if set to `true`.
 
 #### `outputReport`
 
@@ -148,7 +172,9 @@ Will process and report errors only and ignore warnings, if this option is set t
 
 Write the output of the errors to a file, for example a checkstyle xml file for use for reporting on Jenkins CI.
 
-The `filePath` is an absolute path or relative to the webpack config: `output.path`. You can pass in a different `formatter` for the output file, if none is passed in the default/configured formatter will be used.
+The `filePath` is an absolute path or relative to the webpack config: `output.path`.
+You can pass in a different `formatter` for the output file,
+if none is passed in the default/configured formatter will be used.
 
 ## Development
 
