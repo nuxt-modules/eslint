@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/nuxt-community/eslint-module/compare/v1.2.0...v3.0.0) (2020-10-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* Use `eslint-webpack-plugin` instead of `eslint-loader` deprecated.
+
+* fix: docs and default values
+* drop support for eslint 5
+
+### Features
+
+* use `eslint-webpack-plugin` ([#40](https://github.com/nuxt-community/eslint-module/issues/40)) ([3a21afd](https://github.com/nuxt-community/eslint-module/commit/3a21afd7f870b02ae8b0299c6fc9956407361235))
+
+
+* drop support for eslint 5 ([28f7ce5](https://github.com/nuxt-community/eslint-module/commit/28f7ce5fb570c5a7bf8bc8093387bb967328f70a))
+
 ## [2.0.0](https://github.com/nuxt-community/eslint-module/compare/v1.2.0...v2.0.0) (2020-05-05)
 
 
