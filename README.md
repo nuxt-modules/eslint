@@ -63,7 +63,7 @@ Note that the config option you provide will be passed to the `ESLint` class.
 This is a different set of options than what you'd specify in `package.json` or `.eslintrc`.
 See the [eslint docs](https://eslint.org/docs/developer-guide/nodejs-api#-new-eslintoptions) for more details.
 
-### `cache``
+### `cache`
 
 - Type: `Boolean`
 - Default: `true`
