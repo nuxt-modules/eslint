@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/eslint-module",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "ESLint module for Nuxt.js",
   "repository": "nuxt-community/eslint-module",
   "license": "MIT",
