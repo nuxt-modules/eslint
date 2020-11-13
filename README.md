@@ -12,7 +12,7 @@
 
 ## Requirements
 
-You need to ensure that you have `eslint` installed:
+You need to ensure that you have `eslint >= 7` installed:
 
 ```bash
 yarn add --dev eslint # or npm install --save-dev eslint
@@ -84,21 +84,28 @@ A string indicating the root of your files.
 
 Path to `eslint` instance that will be used for linting.
 
-### `files`
+### `exclude`
 
 - Type: `String|Array[String]`
-- Default: `'.'`
+- Default: `'node_modules'`
 
-Specify directories, files, or globs. Must be relative to `options.context`.
-Directories are traversed recursively looking for files matching `options.extensions`.
-File and glob patterns ignore `options.extensions`.
+Specify the files and/or directories to exclude. Must be relative to `options.context`.
 
 ### `extensions`
 
 - Type: `String|Array[String]`
-- Default: `['ts', 'js', 'vue']`
+- Default: `['js', 'ts', 'vue']`
 
 Specify extensions that should be checked.
+
+### `files`
+
+- Type: `String|Array[String]`
+- Default: `null`
+
+Specify directories, files, or globs. Must be relative to `options.context`.
+Directories are traversed recursively looking for files matching `options.extensions`.
+File and glob patterns ignore `options.extensions`.
 
 ### `fix`
 
