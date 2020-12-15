@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "consola": "^2.15.0",
-    "eslint-webpack-plugin": "^2.3.0"
+    "eslint-webpack-plugin": "^2.4.1"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
