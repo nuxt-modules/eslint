@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.2](https://github.com/nuxt-community/eslint-module/compare/v3.0.1...v3.0.2) (2020-12-16)
+
+
+### Bug Fixes
+
+* can't render pages on older versions of Nuxt if options.watch is missing ([#52](https://github.com/nuxt-community/eslint-module/issues/52)) ([1782113](https://github.com/nuxt-community/eslint-module/commit/17821136382929ec6ddb9075a122a559a04e8290))
+* peer dependency ([06cd9c5](https://github.com/nuxt-community/eslint-module/commit/06cd9c50a74eec19621717c114e71af06cdda588))
+
 ### [3.0.1](https://github.com/nuxt-community/eslint-module/compare/v3.0.0...v3.0.1) (2020-11-13)
 
 
