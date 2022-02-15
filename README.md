@@ -6,7 +6,7 @@
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-> ESLint module for Nuxt.js
+> ESLint module for Nuxt
 
 [📖 **Release Notes**](./CHANGELOG.md)
 

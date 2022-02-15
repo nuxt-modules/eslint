@@ -3,10 +3,10 @@ name: ci
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   ci:
@@ -14,9 +14,8 @@ jobs:
 
     strategy:
       matrix:
-        # os: [ubuntu-latest, macos-latest, windows-latest]
-        os: [ubuntu-latest]
-        node: [10, 12, 14, 15]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node: [14, 16]
 
     steps:
       - uses: actions/setup-node@v2
@@ -24,7 +23,7 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
 
       - name: cache node_modules
         uses: actions/cache@v2
@@ -43,4 +42,4 @@ jobs:
         run: yarn test
 
       - name: Coverage
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v2
