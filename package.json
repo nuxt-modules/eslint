@@ -18,8 +18,8 @@
     "test": "yarn lint && jest"
   },
   "dependencies": {
-    "consola": "^2.15.0",
-    "eslint-webpack-plugin": "^2.4.1"
+    "consola": "^2.15.3",
+    "eslint-webpack-plugin": "^2.6.0"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
