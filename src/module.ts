@@ -13,6 +13,10 @@ export interface ModuleOptions extends Partial<Options>{}
 const CONFIG_KEY = 'eslint'
 
 const nuxtModule: Module<ModuleOptions> = function (moduleOptions) {
+  if (!this.options.dev) {
+    return
+  }
+
   const DEFAULTS: ModuleOptions = {
     context: this.options.srcDir,
     eslintPath: 'eslint',
