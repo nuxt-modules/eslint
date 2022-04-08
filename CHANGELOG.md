@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/nuxt-community/eslint-module/compare/v3.0.2...v3.1.0) (2022-04-08)
+
+
+### Features
+
+* typescript rewrite ([#74](https://github.com/nuxt-community/eslint-module/issues/74)) ([21767c5](https://github.com/nuxt-community/eslint-module/commit/21767c54a6152c1a231a459a3bb33fd6992168fc))
+
+
+### Bug Fixes
+
+* only run in dev mode ([c3fb90e](https://github.com/nuxt-community/eslint-module/commit/c3fb90e8d382ba78aaa93ce43fa75dfcfd56f72a))
+
 ### [3.0.2](https://github.com/nuxt-community/eslint-module/compare/v3.0.1...v3.0.2) (2020-12-16)
 
 

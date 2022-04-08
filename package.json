@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/eslint-module",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "ESLint module for Nuxt.js",
   "repository": "nuxt-community/eslint-module",
   "license": "MIT",
@@ -14,9 +14,9 @@
   ],
   "scripts": {
     "build": "siroc build",
-    "prepublishOnly": "yarn build",
     "dev": "nuxt dev test/fixture/basic",
     "lint": "eslint --ext .js,.ts,.vue .",
+    "prepublishOnly": "yarn build",
     "release": "yarn test && yarn build && standard-version && git push --follow-tags && npm publish",
     "test": "yarn lint && yarn jest"
   },
