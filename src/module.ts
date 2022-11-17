@@ -1,19 +1,9 @@
-import { resolve } from 'path'
 import { defineNuxtModule, addVitePlugin, addWebpackPlugin } from '@nuxt/kit'
-import { name, version } from '../package.json'
+import type { Options as VitePlugin } from 'vite-plugin-eslint'
 import type { Options as WebpackPlugin } from 'eslint-webpack-plugin'
-// import type { Options as VitePlugin } from 'vite-plugin-eslint'
-import type { ESLint } from 'eslint'
-
-interface VitePlugin {
-  cache?: boolean;
-  fix?: boolean;
-  include?: string | string[];
-  exclude?: string | string[];
-  formatter?: string | ESLint.Formatter;
-  throwOnWarning?: boolean;
-  throwOnError?: boolean;
-}
+import vitePluginEslint from 'vite-plugin-eslint'
+import EslintWebpackPlugin from 'eslint-webpack-plugin'
+import { name, version } from '../package.json'
 
 export interface ModuleOptions {
   vite: VitePlugin,
@@ -24,21 +14,16 @@ export default defineNuxtModule<ModuleOptions>({
   meta: {
     name,
     version,
-    configKey: 'eslint'
+    configKey: 'eslint',
+    compatibility: {
+      bridge: true
+    }
   },
   defaults: nuxt => ({
     vite: {
       cache: true,
-      fix: false,
-      include: [
-        './**/*.js',
-        './**/*.jsx',
-        './**/*.ts',
-        './**/*.tsx',
-        './**/*.vue',
-      ],
-      throwOnWarning: true,
-      throwOnError: true,
+      failOnWarning: false,
+      failOnError: false
     },
     webpack: {
       context: nuxt.options.srcDir,
@@ -49,32 +34,22 @@ export default defineNuxtModule<ModuleOptions>({
     }
   }),
   setup (options, nuxt) {
-    const filesToWatch = [
-      '.eslintrc',
-      '.eslintrc.json',
-      '.eslintrc.yaml',
-      '.eslintrc.yml',
-      '.eslintrc.js'
-    ]
-
-    nuxt.options.watch = nuxt.options.watch || []
-    nuxt.options.watch.push(
-      ...filesToWatch.map(file => resolve(nuxt.options.rootDir, file))
-    )
-
-    if (nuxt.options.vite) {
-      const vitePluginEslint = require('vite-plugin-eslint')
-
-      return addVitePlugin(vitePluginEslint(options.vite), {
-        build: false,
-      })
+    if (!nuxt.options.dev) {
+      return
     }
 
-    const EslintWebpackPlugin = require('eslint-webpack-plugin')
+    /*
+    TODO: add eslint config to watch
+    nuxt.options.watch.push(await findPath([
+      '.eslintrc',
+      '.eslintrc.js',
+      '.eslintrc.yaml',
+      '.eslintrc.yml',
+      '.eslintrc.json'
+    ])
+    */
 
-    addWebpackPlugin(new EslintWebpackPlugin(options.webpack), {
-      build: false,
-      server: false
-    })
+    addVitePlugin(vitePluginEslint(options.vite), { server: false })
+    addWebpackPlugin(new EslintWebpackPlugin(options.webpack), { server: false })
   }
 })
