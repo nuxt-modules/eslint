@@ -36,7 +36,7 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    nuxt.hooks.hook('builder:watch', (_, path) => {
+    nuxt.hooks.hookOnce('builder:watch', (_, path) => {
       const configFiles = [
         '.eslintrc',
         '.eslintrc.js',
