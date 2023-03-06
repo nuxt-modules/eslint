@@ -5,9 +5,8 @@ import vitePluginEslint from 'vite-plugin-eslint'
 import EslintWebpackPlugin from 'eslint-webpack-plugin'
 import { name, version } from '../package.json'
 
-export interface ModuleOptions {
-  vite: VitePlugin,
-  webpack: WebpackPlugin
+export type ModuleOptions = VitePlugin & WebpackPlugin & {
+  extensions: string[]
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -19,37 +18,48 @@ export default defineNuxtModule<ModuleOptions>({
       bridge: true
     }
   },
-  defaults: nuxt => ({
-    vite: {
-      cache: true,
-      failOnWarning: false,
-      failOnError: false
-    },
-    webpack: {
-      context: nuxt.options.srcDir,
-      eslintPath: 'eslint',
-      extensions: ['js', 'jsx', 'ts', 'tsx', 'vue'],
-      cache: true,
-      lintDirtyModulesOnly: true
-    }
-  }),
+  defaults: {
+    cache: true,
+    exclude: ['**/node_modules/**'],
+    extensions: ['js', 'jsx', 'ts', 'tsx', 'vue'],
+    eslintPath: 'eslint',
+    emitError: true,
+    emitWarning: true,
+    failOnError: false,
+    failOnWarning: false,
+    fix: false,
+    formatter: 'stylish',
+    lintOnStart: true
+  },
   setup (options, nuxt) {
     if (!nuxt.options.dev) {
       return
     }
 
-    /*
-    TODO: add eslint config to watch
-    nuxt.options.watch.push(await findPath([
-      '.eslintrc',
-      '.eslintrc.js',
-      '.eslintrc.yaml',
-      '.eslintrc.yml',
-      '.eslintrc.json'
-    ])
-    */
+    nuxt.hooks.hook('builder:watch', (_, path) => {
+      const configFiles = [
+        '.eslintrc',
+        '.eslintrc.js',
+        '.eslintrc.yaml',
+        '.eslintrc.yml',
+        '.eslintrc.json'
+      ]
 
-    addVitePlugin(vitePluginEslint(options.vite), { server: false })
-    addWebpackPlugin(new EslintWebpackPlugin(options.webpack), { server: false })
+      if (configFiles.includes(path)) {
+        // waiting https://github.com/nuxt/nuxt/pull/18641
+        // nuxt.callHook('restart', { hard: true })
+      }
+    })
+
+    addVitePlugin(vitePluginEslint({
+      ...options,
+      include: options.extensions.map(ext => `**/*.${ext}`)
+    }), { server: false })
+
+    addWebpackPlugin(new EslintWebpackPlugin({
+      ...options,
+      context: nuxt.options.srcDir,
+      lintDirtyModulesOnly: !options.lintOnStart
+    }), { server: false })
   }
 })

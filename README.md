@@ -15,7 +15,9 @@
 You need to ensure that you have `eslint >= 7` installed:
 
 ```bash
-yarn add --dev eslint # or npm install --save-dev eslint
+pnpm add -D eslint
+yarn add -D eslint
+npm install -D eslint
 ```
 
 ## Setup
@@ -23,14 +25,16 @@ yarn add --dev eslint # or npm install --save-dev eslint
 1. Add `@nuxtjs/eslint-module` dependency to your project
 
 ```bash
-yarn add --dev @nuxtjs/eslint-module # or npm install --save-dev @nuxtjs/eslint-module
+pnpm add @nuxtjs/eslint-module
+yarn add @nuxtjs/eslint-module
+npm install @nuxtjs/eslint-module
 ```
 
-2. Add `@nuxtjs/eslint-module` to the `buildModules` section of `nuxt.config.js`
+2. Add `@nuxtjs/eslint-module` to the `modules` section of `nuxt.config.js`
 
 ```js
 export default {
-  buildModules: [
+  modules: [
     // Simple usage
     '@nuxtjs/eslint-module',
 
@@ -40,13 +44,11 @@ export default {
 }
 ```
 
-:warning: If you are using Nuxt **< v2.9** you have to install the module as a `dependency` (No `--dev` or `--save-dev` flags) and use `modules` section in `nuxt.config.js` instead of `buildModules`.
-
 ### Using top level options
 
 ```js
 export default {
-  buildModules: [
+  modules: [
     '@nuxtjs/eslint-module'
   ],
   eslint: {
@@ -57,11 +59,11 @@ export default {
 
 ## Options
 
-You can pass [eslint options](https://eslint.org/docs/developer-guide/nodejs-api#-new-eslintoptions).
+You can pass [eslint options](https://eslint.org/docs/latest/integrate/nodejs-api#-new-eslintoptions).
 
 Note that the config option you provide will be passed to the `ESLint` class.
 This is a different set of options than what you'd specify in `package.json` or `.eslintrc`.
-See the [eslint docs](https://eslint.org/docs/developer-guide/nodejs-api#-new-eslintoptions) for more details.
+See the [eslint docs](https://eslint.org/docs/latest/integrate/nodejs-api#-new-eslintoptions) for more details.
 
 ### `cache`
 
@@ -70,12 +72,19 @@ See the [eslint docs](https://eslint.org/docs/developer-guide/nodejs-api#-new-es
 
 **Note**: The cache is enabled by default to decrease execution time.
 
-### `context`
+### `exclude`
 
-- Type: `String`
-- Default: `srcDir`
+- Type: `Array[String]`
+- Default: `['**/node_modules/**']]`
 
-A string indicating the root of your files.
+Specify the files and/or directories to exclude.
+
+### `extensions`
+
+- Type: `String|Array[String]`
+- Default: `['js', 'jsx', 'ts', 'tsx', 'vue']`
+
+Specify extensions that should be checked.
 
 ### `eslintPath`
 
@@ -84,35 +93,40 @@ A string indicating the root of your files.
 
 Path to `eslint` instance that will be used for linting.
 
-### `exclude`
+#### `emitError`
 
-- Type: `String|Array[String]`
-- Default: `'node_modules'`
+- Type: `Boolean`
+- Default: `true`
 
-Specify the files and/or directories to exclude. Must be relative to `options.context`.
+The errors found will be printed.
 
-### `extensions`
+#### `emitWarning`
 
-- Type: `String|Array[String]`
-- Default: `['js', 'ts', 'vue']`
+- Type: `Boolean`
+- Default: `true`
 
-Specify extensions that should be checked.
+The warnings found will be printed.
 
-### `files`
+#### `failOnWarning`
 
-- Type: `String|Array[String]`
-- Default: `null`
+- Type: `Boolean`
+- Default: `false`
 
-Specify directories, files, or globs. Must be relative to `options.context`.
-Directories are traversed recursively looking for files matching `options.extensions`.
-File and glob patterns ignore `options.extensions`.
+Will cause the module build to fail if there are any warnings, based on `emitWarning`.
+
+#### `failOnError`
+
+- Type: `Boolean`
+- Default: `false`
+
+Will cause the module build to fail if there are any errors, based on `emitError`.
 
 ### `fix`
 
 - Type: `Boolean`
 - Default: `false`
 
-Will enable [ESLint autofix feature](https://eslint.org/docs/developer-guide/nodejs-api#cliengineoutputfixes).
+Auto fix source code.
 
 **Be careful: this option will change source files.**
 
@@ -123,76 +137,26 @@ Will enable [ESLint autofix feature](https://eslint.org/docs/developer-guide/nod
 
 Accepts a function that will have one argument: an array of eslint messages (object). The function must return the output as a string. You can use official [eslint formatters](https://eslint.org/docs/user-guide/formatters/).
 
-### `lintDirtyModulesOnly`
+### `lintOnStart`
 
 - Type: `Boolean`
 - Default: `true`
 
-Lint only changed files, skip lint on start.
+Check all matching files on project startup, too slow, turn on discreetly.
 
-### `threads`
+## Contributing
 
-- Type: `Boolean | Number`
-- Default: `false`
+You can contribute to this module online with CodeSandBox:
 
-Will run lint tasks across a thread pool. The pool size is automatic unless you specify a number.
+[![Edit @nuxtjs/robots](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/nuxt-community/eslint-module/?fontsize=14&hidenavigation=1&theme=dark)
 
-### Errors and Warning
-
-**By default the plugin will auto adjust error reporting depending on eslint errors/warnings counts.**
-You can still force this behavior by using `emitError` **or** `emitWarning` options:
-
-#### `emitError`
-
-- Type: `Boolean`
-- Default: `false`
-
-Will always return errors, if set to `true`.
-
-#### `emitWarning`
-
-- Type: `Boolean`
-- Default: `false`
-
-Will always return warnings, if set to `true`.
-
-#### `failOnError`
-
-- Type: `Boolean`
-- Default: `false`
-
-Will cause the module build to fail if there are any errors, if set to `true`.
-
-#### `failOnWarning`
-
-- Type: `Boolean`
-- Default: `false`
-
-Will cause the module build to fail if there are any warnings, if set to `true`.
-
-#### `quiet`
-
-- Type: `Boolean`
-- Default: `false`
-
-Will process and report errors only and ignore warnings, if set to `true`.
-
-#### `outputReport`
-
-- Type: `Boolean|Object`
-- Default: `false`
-
-Write the output of the errors to a file, for example a checkstyle xml file for use for reporting on Jenkins CI.
-
-The `filePath` is an absolute path or relative to the webpack config: `output.path`.
-You can pass in a different `formatter` for the output file,
-if none is passed in the default/configured formatter will be used.
-
-## Development
+Or locally:
 
 1. Clone this repository
-2. Install dependencies using `yarn install` or `npm install`
-3. Start development server using `npm run dev`
+2. Install dependencies using `pnpm install`
+3. Prepare development server using `pnpm dev:prepare`
+4. Build module using `pnpm build`
+5. Launch playground using `pnpm dev`
 
 ## License
 
