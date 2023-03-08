@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v4.0.1
+
+[compare changes](https://undefined/undefined/compare/v4.0.0...v4.0.1)
+
+
+### 🩹 Fixes
+
+  - Options (c3de9d2)
+
+### 🏡 Chore
+
+  - Bump pnpm (601e12d)
+  - Ignore eslint (2a84a08)
+
+### ❤️  Contributors
+
+- Ricardo Gobbo De Souza ([@ricardogobbosouza](http://github.com/ricardogobbosouza))
+
 ## v4.0.0
 
 [compare changes](https://undefined/undefined/compare/v3.1.0...v4.0.0)
