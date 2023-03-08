@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v4.0.0
+
+[compare changes](https://undefined/undefined/compare/v3.1.0...v4.0.0)
+
+
+### 💅 Refactors
+
+  - ⚠️  Add support for nuxt 3/nuxt bridge (#70)
+
+#### ⚠️  Breaking Changes
+
+  - ⚠️  Add support for nuxt 3/nuxt bridge (#70)
+
+### ❤️  Contributors
+
+- Ricardo Gobbo De Souza ([@ricardogobbosouza](http://github.com/ricardogobbosouza))
+
 ## [3.1.0](https://github.com/nuxt-community/eslint-module/compare/v3.0.2...v3.1.0) (2022-04-08)
 
 
