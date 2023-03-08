@@ -14,9 +14,21 @@
 
 You need to ensure that you have `eslint >= 7` installed:
 
+With `pnpm`
+
 ```bash
 pnpm add -D eslint
+```
+
+Or, with `yarn`
+
+```bash
 yarn add -D eslint
+```
+
+Or, with `npm`
+
+```bash
 npm install -D eslint
 ```
 
@@ -24,9 +36,21 @@ npm install -D eslint
 
 1. Add `@nuxtjs/eslint-module` dependency to your project
 
+With `pnpm`
+
 ```bash
 pnpm add @nuxtjs/eslint-module
+```
+
+Or, with `yarn`
+
+```bash
 yarn add @nuxtjs/eslint-module
+```
+
+Or, with `npm`
+
+```bash
 npm install @nuxtjs/eslint-module
 ```
 
