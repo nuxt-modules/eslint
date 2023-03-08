@@ -1,4 +1,4 @@
-import { defineNuxtModule, addVitePlugin, addWebpackPlugin } from '@nuxt/kit'
+import { defineNuxtModule, addVitePlugin, addWebpackPlugin, hasNuxtCompatibility } from '@nuxt/kit'
 import type { Options as VitePlugin } from 'vite-plugin-eslint'
 import type { Options as WebpackPlugin } from 'eslint-webpack-plugin'
 import vitePluginEslint from 'vite-plugin-eslint'
@@ -33,20 +33,23 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    nuxt.hooks.hookOnce('builder:watch', (_, path) => {
-      const configFiles = [
-        '.eslintrc',
-        '.eslintrc.js',
-        '.eslintrc.yaml',
-        '.eslintrc.yml',
-        '.eslintrc.json'
-      ]
+    /* waiting nuxt 3.3
+    if (hasNuxtCompatibility({ nuxt: '>=3.3' })) {
+      nuxt.hooks.hookOnce('builder:watch', (_, path) => {
+        const configFiles = [
+          '.eslintrc',
+          '.eslintrc.js',
+          '.eslintrc.yaml',
+          '.eslintrc.yml',
+          '.eslintrc.json'
+        ]
 
-      if (configFiles.includes(path)) {
-        // waiting https://github.com/nuxt/nuxt/pull/18641
-        // nuxt.callHook('restart', { hard: true })
-      }
-    })
+        if (configFiles.includes(path)) {
+          nuxt.callHook('restart', { hard: true })
+        }
+      })
+    }
+    */
 
     addVitePlugin(vitePluginEslint(options), { server: false })
 
