@@ -1,47 +1,55 @@
 {
   "name": "@nuxtjs/eslint-module",
   "version": "3.1.0",
-  "description": "ESLint module for Nuxt.js",
+  "description": "ESLint module for Nuxt",
   "repository": "nuxt-community/eslint-module",
   "license": "MIT",
   "contributors": [
     "Ricardo Gobbo de Souza <ricardogobbosouza@yahoo.com.br>"
   ],
-  "main": "./dist/module.js",
-  "types": "./dist/module.d.ts",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/module.cjs",
+      "import": "./dist/module.mjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "siroc build",
-    "dev": "nuxt dev test/fixture/basic",
-    "lint": "eslint --ext .js,.ts,.vue .",
-    "prepublishOnly": "yarn build",
-    "release": "yarn test && yarn build && standard-version && git push --follow-tags && npm publish",
-    "test": "yarn lint && yarn jest"
+    "build": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "lint": "eslint --ext .js,.ts,.vue",
+    "prepack": "pnpm build",
+    "release": "pnpm test && pnpm build && changelogen --release && git push --follow-tags && pnpm publish",
+    "test": "pnpm lint && vitest run --coverage"
   },
   "dependencies": {
-    "consola": "^2.15.3",
-    "defu": "^6.0.0",
-    "eslint-webpack-plugin": "^2.6.0"
+    "@nuxt/kit": "^3.2.3",
+    "eslint-webpack-plugin": "^4.0.0",
+    "vite-plugin-eslint": "^1.8.1"
   },
   "devDependencies": {
-    "@babel/preset-typescript": "latest",
+    "@nuxt/module-builder": "latest",
     "@nuxt/test-utils": "latest",
-    "@nuxt/types": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
-    "@types/jest": "latest",
-    "@types/node": "latest",
+    "@vitest/coverage-c8": "latest",
+    "changelogen": "latest",
     "eslint": "latest",
-    "jest": "latest",
     "nuxt": "latest",
-    "siroc": "latest",
-    "standard-version": "latest"
+    "vitest": "latest"
   },
   "peerDependencies": {
     "eslint": ">=7"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "packageManager": "pnpm@7.28.0"
 }

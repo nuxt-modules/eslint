@@ -1,16 +1,15 @@
-import { setupTest, get } from '@nuxt/test-utils'
+import { describe, test, expect } from 'vitest'
+import { setup, useTestContext } from '@nuxt/test-utils'
 
-describe('dev', () => {
-  setupTest({
-    fixture: 'fixture',
-    server: true,
-    config: {
-      dev: true
-    }
+describe('dev', async () => {
+  await setup({
+    fixture: '../playground',
+    server: false,
+    dev: true
   })
 
-  test('render', async () => {
-    const { body } = await get('/')
-    expect(body).toContain('Works!')
+  test('should added eslint plugin', () => {
+    const { nuxt } = useTestContext()
+    expect(nuxt?.hooks._hooks['vite:extendConfig']).toHaveLength(3)
   })
 })
