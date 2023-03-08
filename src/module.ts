@@ -5,9 +5,7 @@ import vitePluginEslint from 'vite-plugin-eslint'
 import EslintWebpackPlugin from 'eslint-webpack-plugin'
 import { name, version } from '../package.json'
 
-export type ModuleOptions = VitePlugin & WebpackPlugin & {
-  extensions: string[]
-}
+export type ModuleOptions = VitePlugin & WebpackPlugin
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -18,19 +16,18 @@ export default defineNuxtModule<ModuleOptions>({
       bridge: true
     }
   },
-  defaults: {
+  defaults: nuxt => ({
     cache: true,
-    exclude: ['**/node_modules/**'],
-    extensions: ['js', 'jsx', 'ts', 'tsx', 'vue'],
+    include: [`${nuxt.options.srcDir}/**/*.{js,jsx,ts,tsx,vue}`],
+    exclude: ['**/node_modules/**', nuxt.options.buildDir],
     eslintPath: 'eslint',
-    emitError: true,
-    emitWarning: true,
-    failOnError: false,
-    failOnWarning: false,
-    fix: false,
     formatter: 'stylish',
-    lintOnStart: true
-  },
+    lintOnStart: true,
+    emitWarning: true,
+    emitError: true,
+    failOnWarning: false,
+    failOnError: false
+  }),
   setup (options, nuxt) {
     if (!nuxt.options.dev) {
       return
@@ -51,14 +48,12 @@ export default defineNuxtModule<ModuleOptions>({
       }
     })
 
-    addVitePlugin(vitePluginEslint({
-      ...options,
-      include: options.extensions.map(ext => `**/*.${ext}`)
-    }), { server: false })
+    addVitePlugin(vitePluginEslint(options), { server: false })
 
     addWebpackPlugin(new EslintWebpackPlugin({
       ...options,
       context: nuxt.options.srcDir,
+      files: options.include,
       lintDirtyModulesOnly: !options.lintOnStart
     }), { server: false })
   }

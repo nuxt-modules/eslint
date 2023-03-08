@@ -39,19 +39,19 @@ npm install -D eslint
 With `pnpm`
 
 ```bash
-pnpm add @nuxtjs/eslint-module
+pnpm add -D @nuxtjs/eslint-module
 ```
 
 Or, with `yarn`
 
 ```bash
-yarn add @nuxtjs/eslint-module
+yarn add -D @nuxtjs/eslint-module
 ```
 
 Or, with `npm`
 
 ```bash
-npm install @nuxtjs/eslint-module
+npm install -D @nuxtjs/eslint-module
 ```
 
 2. Add `@nuxtjs/eslint-module` to the `modules` section of `nuxt.config.js`
@@ -96,19 +96,19 @@ See the [eslint docs](https://eslint.org/docs/latest/integrate/nodejs-api#-new-e
 
 **Note**: The cache is enabled by default to decrease execution time.
 
+### `include`
+
+- Type: `String|Array[String]`
+- Default: `[nuxt.options.srcDir.'/**/*.{js,jsx,ts,tsx,vue}']`
+
+Specify directories, files, or globs.
+
 ### `exclude`
 
 - Type: `Array[String]`
-- Default: `['**/node_modules/**']]`
+- Default: `['**/node_modules/**', nuxt.options.buildDir]`
 
 Specify the files and/or directories to exclude.
-
-### `extensions`
-
-- Type: `String|Array[String]`
-- Default: `['js', 'jsx', 'ts', 'tsx', 'vue']`
-
-Specify extensions that should be checked.
 
 ### `eslintPath`
 
@@ -117,49 +117,14 @@ Specify extensions that should be checked.
 
 Path to `eslint` instance that will be used for linting.
 
-#### `emitError`
-
-- Type: `Boolean`
-- Default: `true`
-
-The errors found will be printed.
-
-#### `emitWarning`
-
-- Type: `Boolean`
-- Default: `true`
-
-The warnings found will be printed.
-
-#### `failOnWarning`
-
-- Type: `Boolean`
-- Default: `false`
-
-Will cause the module build to fail if there are any warnings, based on `emitWarning`.
-
-#### `failOnError`
-
-- Type: `Boolean`
-- Default: `false`
-
-Will cause the module build to fail if there are any errors, based on `emitError`.
-
-### `fix`
-
-- Type: `Boolean`
-- Default: `false`
-
-Auto fix source code.
-
-**Be careful: this option will change source files.**
-
 ### `formatter`
 
 - Type: `String|Function`
 - Default: `'stylish'`
 
-Accepts a function that will have one argument: an array of eslint messages (object). The function must return the output as a string. You can use official [eslint formatters](https://eslint.org/docs/user-guide/formatters/).
+Accepts a function that will have one argument: an array of eslint messages (object).
+The function must return the output as a string.
+You can use official [eslint formatters](https://eslint.org/docs/user-guide/formatters/).
 
 ### `lintOnStart`
 
@@ -167,6 +132,34 @@ Accepts a function that will have one argument: an array of eslint messages (obj
 - Default: `true`
 
 Check all matching files on project startup, too slow, turn on discreetly.
+
+### `emitWarning`
+
+- Type: `Boolean`
+- Default: `true`
+
+The warnings found will be printed.
+
+### `emitError`
+
+- Type: `Boolean`
+- Default: `true`
+
+The errors found will be printed.
+
+### `failOnWarning`
+
+- Type: `Boolean`
+- Default: `false`
+
+Will cause the module build to fail if there are any warnings, based on `emitWarning`.
+
+### `failOnError`
+
+- Type: `Boolean`
+- Default: `false`
+
+Will cause the module build to fail if there are any errors, based on `emitError`.
 
 ## Contributing
 
