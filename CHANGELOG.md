@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v4.0.2
+
+[compare changes](https://undefined/undefined/compare/v4.0.1...v4.0.2)
+
+
+### 🩹 Fixes
+
+  - Compatibility (#80)
+  - Webpack options (#82)
+
+### 📖 Documentation
+
+  - Add note for nuxt 2 (1970cfa)
+  - Update nuxt2 branch name (6b39456)
+
+### 🏡 Chore
+
+  - Update module (6765b0c)
+  - Formatting (654f1d4)
+
+### ❤️  Contributors
+
+- Ricardo Gobbo De Souza ([@ricardogobbosouza](http://github.com/ricardogobbosouza))
+
 ## v4.0.1
 
 [compare changes](https://undefined/undefined/compare/v4.0.0...v4.0.1)
