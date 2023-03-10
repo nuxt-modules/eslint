@@ -10,6 +10,13 @@
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
+---
+
+**Note:** This branch is for **Nuxt 2** compatible module.
+Checkout the [`main` branch](https://github.com/nuxt-community/eslint-module) for **Nuxt 3** or **Nuxt Bridge** support.
+
+---
+
 ## Requirements
 
 You need to ensure that you have `eslint >= 7` installed:
