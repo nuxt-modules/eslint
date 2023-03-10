@@ -53,11 +53,16 @@ export default defineNuxtModule<ModuleOptions>({
 
     addVitePlugin(vitePluginEslint(options), { server: false })
 
-    addWebpackPlugin(new EslintWebpackPlugin({
+    const webpackOptions = {
       ...options,
       context: nuxt.options.srcDir,
       files: options.include,
       lintDirtyModulesOnly: !options.lintOnStart
-    }), { server: false })
+    }
+
+    delete webpackOptions.include
+    delete webpackOptions.lintOnStart
+
+    addWebpackPlugin(new EslintWebpackPlugin(webpackOptions), { server: false })
   }
 })
