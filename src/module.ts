@@ -33,21 +33,16 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    /* waiting nuxt 3.3
-    if (hasNuxtCompatibility({ nuxt: '>=3.3' })) {
-      nuxt.hooks.hookOnce('builder:watch', (_, path) => {
-        const configFiles = [
-          '.eslintrc',
+    /*
+    // waiting nuxt 3.3
+    if (nuxt.options.watch) {
+      nuxt.options.watch.push(
+        '.eslintrc',
           '.eslintrc.js',
           '.eslintrc.yaml',
           '.eslintrc.yml',
           '.eslintrc.json'
-        ]
-
-        if (configFiles.includes(path)) {
-          nuxt.callHook('restart', { hard: true })
-        }
-      })
+      )
     }
     */
 
