@@ -30,7 +30,7 @@ yarn add --dev eslint # or npm install --save-dev eslint
 1. Add `@nuxtjs/eslint-module` dependency to your project
 
 ```bash
-yarn add --dev @nuxtjs/eslint-module # or npm install --save-dev @nuxtjs/eslint-module
+yarn add --dev @nuxtjs/eslint-module@nuxt2 # or npm install --save-dev @nuxtjs/eslint-module@nuxt2
 ```
 
 2. Add `@nuxtjs/eslint-module` to the `buildModules` section of `nuxt.config.js`
@@ -208,17 +208,17 @@ if none is passed in the default/configured formatter will be used.
 Copyright (c) Nuxt Community
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/eslint-module/latest.svg
-[npm-version-href]: https://npmjs.com/package/@nuxtjs/eslint-module
+[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/eslint-module/nuxt2.svg
+[npm-version-href]: https://npmjs.com/package/@nuxtjs/eslint-module/v/nuxt2
 
 [npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/eslint-module.svg
-[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/eslint-module
+[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/eslint-module/v/nuxt2
 
-[github-actions-ci-src]: https://github.com/nuxt-community/eslint-module/workflows/ci/badge.svg
-[github-actions-ci-href]: https://github.com/nuxt-community/eslint-module/actions?query=workflow%3Aci
+[github-actions-ci-src]: https://github.com/nuxt-community/eslint-module/workflows/ci/badge.svg?branch=nuxt2
+[github-actions-ci-href]: https://github.com/nuxt-community/eslint-module/actions?query=workflow%3Aci+branch%3Anuxt2
 
-[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/eslint-module.svg
-[codecov-href]: https://codecov.io/gh/nuxt-community/eslint-module
+[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/eslint-module/nuxt2
+[codecov-href]: https://codecov.io/gh/nuxt-community/eslint-module/v/nuxt2
 
 [license-src]: https://img.shields.io/npm/l/@nuxtjs/eslint-module.svg
-[license-href]: https://npmjs.com/package/@nuxtjs/eslint-module
+[license-href]: https://npmjs.com/package/@nuxtjs/eslint-module/v/nuxt2
