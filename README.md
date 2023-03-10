@@ -13,7 +13,7 @@
 ---
 
 **Note:** This branch is for **Nuxt 3** or **Nuxt Bridge** compatible module.
-Checkout the [`v3` branch](https://github.com/nuxt-community/eslint-module/tree/v3) for **Nuxt 2** support. 
+Checkout the [`nuxt2` branch](https://github.com/nuxt-community/eslint-module/tree/nuxt2) for **Nuxt 2** support. 
 
 ---
 
