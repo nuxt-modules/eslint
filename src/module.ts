@@ -38,6 +38,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     const configPaths = [
+      '.eslintignore',
       '.eslintrc',
       '.eslintrc.js',
       '.eslintrc.yaml',
