@@ -61,10 +61,10 @@ Or, with `npm`
 npm install -D @nuxtjs/eslint-module
 ```
 
-2. Add `@nuxtjs/eslint-module` to the `modules` section of `nuxt.config.js`
+2. Add `@nuxtjs/eslint-module` to the `modules` section of `nuxt.config.ts`
 
 ```js
-export default {
+export default defineNuxtConfig({
   modules: [
     // Simple usage
     '@nuxtjs/eslint-module',
@@ -72,20 +72,20 @@ export default {
     // With options
     ['@nuxtjs/eslint-module', { /* module options */ }]
   ]
-}
+})
 ```
 
 ### Using top level options
 
 ```js
-export default {
+export default defineNuxtConfig({
   modules: [
     '@nuxtjs/eslint-module'
   ],
   eslint: {
     /* module options */
   }
-}
+})
 ```
 
 ## Options
