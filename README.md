@@ -61,31 +61,34 @@ Or, with `npm`
 npm install -D @nuxtjs/eslint-module
 ```
 
-2. Add `@nuxtjs/eslint-module` to the `modules` section of `nuxt.config.js`
+2. Add `@nuxtjs/eslint-module` to the `modules` section of `nuxt.config.ts`
 
 ```js
-export default {
+export default defineNuxtConfig({
   modules: [
     // Simple usage
-    '@nuxtjs/eslint-module',
+    "@nuxtjs/eslint-module",
 
     // With options
-    ['@nuxtjs/eslint-module', { /* module options */ }]
-  ]
-}
+    [
+      "@nuxtjs/eslint-module",
+      {
+        /* module options */
+      },
+    ],
+  ],
+});
 ```
 
 ### Using top level options
 
 ```js
-export default {
-  modules: [
-    '@nuxtjs/eslint-module'
-  ],
+export default defineNuxtConfig({
+  modules: ["@nuxtjs/eslint-module"],
   eslint: {
     /* module options */
-  }
-}
+  },
+});
 ```
 
 ## Options
@@ -189,17 +192,14 @@ Or locally:
 Copyright (c) Nuxt Community
 
 <!-- Badges -->
+
 [npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/eslint-module/latest.svg
 [npm-version-href]: https://npmjs.com/package/@nuxtjs/eslint-module
-
 [npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/eslint-module.svg
 [npm-downloads-href]: https://npmjs.com/package/@nuxtjs/eslint-module
-
 [github-actions-ci-src]: https://github.com/nuxt-community/eslint-module/workflows/ci/badge.svg
 [github-actions-ci-href]: https://github.com/nuxt-community/eslint-module/actions?query=workflow%3Aci
-
 [codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/eslint-module.svg
 [codecov-href]: https://codecov.io/gh/nuxt-community/eslint-module
-
 [license-src]: https://img.shields.io/npm/l/@nuxtjs/eslint-module.svg
 [license-href]: https://npmjs.com/package/@nuxtjs/eslint-module
