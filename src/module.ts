@@ -47,7 +47,7 @@ export default defineNuxtModule<ModuleOptions>({
     ]
 
     if (nuxt.options.watch) {
-      nuxt.options.watch.push(...configPaths.map(path => relative(nuxt.options.srcDir, path)))
+      nuxt.options.watch.push(...configPaths.map(path => relative(nuxt.options.rootDir, path)))
     } else {
       const watcher = watch(configPaths, { depth: 0 }).on('change', (path: string) => {
         logger.info(`Eslint config changed: ${path}`)
