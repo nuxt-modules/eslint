@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v4.1.0
+
+[compare changes](https://undefined/undefined/compare/v4.0.2...v4.1.0)
+
+
+### 🚀 Enhancements
+
+  - Restart nuxt when eslint config file is changed (#86)
+
+### 📖 Documentation
+
+  - Update config to use nuxt 3 config (#90)
+
+### 🏡 Chore
+
+  - Update deps (7de08da)
+
+### ❤️  Contributors
+
+- Ricardo Gobbo De Souza ([@ricardogobbosouza](http://github.com/ricardogobbosouza))
+- Dami Sparks ([@damisparks](http://github.com/damisparks))
+
 ## v4.0.2
 
 [compare changes](https://undefined/undefined/compare/v4.0.1...v4.0.2)
