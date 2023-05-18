@@ -32,7 +32,9 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.3.1",
+    "chokidar": "^3.5.3",
     "eslint-webpack-plugin": "^4.0.0",
+    "pathe": "^1.1.0",
     "vite-plugin-eslint": "^1.8.1"
   },
   "devDependencies": {

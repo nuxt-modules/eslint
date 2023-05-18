@@ -1,9 +1,13 @@
-import { defineNuxtModule, addVitePlugin, addWebpackPlugin, hasNuxtCompatibility } from '@nuxt/kit'
+import { defineNuxtModule, addVitePlugin, addWebpackPlugin, useLogger } from '@nuxt/kit'
 import type { Options as VitePlugin } from 'vite-plugin-eslint'
 import type { Options as WebpackPlugin } from 'eslint-webpack-plugin'
 import vitePluginEslint from 'vite-plugin-eslint'
 import EslintWebpackPlugin from 'eslint-webpack-plugin'
+import { relative } from 'pathe'
+import { watch } from 'chokidar'
 import { name, version } from '../package.json'
+
+const logger = useLogger('nuxt:eslint')
 
 export type ModuleOptions = VitePlugin & WebpackPlugin
 
@@ -33,18 +37,24 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    /*
-    // waiting nuxt 3.3
+    const configPaths = [
+      '.eslintignore',
+      '.eslintrc',
+      '.eslintrc.js',
+      '.eslintrc.yaml',
+      '.eslintrc.yml',
+      '.eslintrc.json'
+    ].map(path => relative(nuxt.options.rootDir, path))
+
     if (nuxt.options.watch) {
-      nuxt.options.watch.push(
-        '.eslintrc',
-          '.eslintrc.js',
-          '.eslintrc.yaml',
-          '.eslintrc.yml',
-          '.eslintrc.json'
-      )
+      nuxt.options.watch.push(...configPaths)
+    } else {
+      const watcher = watch(configPaths, { depth: 0 }).on('change', (path: string) => {
+        logger.info(`Eslint config changed: ${path}`)
+        logger.warn('Please restart the Nuxt server to apply changes or upgrade to latest Nuxt for automatic restart.')
+      })
+      nuxt.hook('close', () => watcher.close())
     }
-    */
 
     addVitePlugin(vitePluginEslint(options), { server: false })
 
