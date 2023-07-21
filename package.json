@@ -34,7 +34,7 @@
     "@nuxt/kit": "^3.5.1",
     "chokidar": "^3.5.3",
     "eslint-webpack-plugin": "^4.0.1",
-    "pathe": "^1.1.0",
+    "pathe": "^1.1.1",
     "vite-plugin-eslint": "^1.8.1"
   },
   "devDependencies": {
@@ -53,5 +53,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@8.5.1"
+  "packageManager": "pnpm@8.6.9"
 }
