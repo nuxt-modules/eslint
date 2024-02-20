@@ -122,7 +122,7 @@ Specify the files and/or directories to exclude.
 - Type: `String`
 - Default: `eslint`
 
-Path to `eslint` instance that will be used for linting.
+Path to `eslint` instance that will be used for linting. Set `'eslint/use-at-your-own-risk'` if you want to use the flat config system in ESLint v8. Place an `eslint.config.js` file in the root of your project or set the `ESLINT_USE_FLAT_CONFIG` environment variable to true and pass the option `overrideConfigFile` to the plugin if you are using other config files. You can learn more from [Flat config rollout plans](https://eslint.org/blog/2023/10/flat-config-rollout-plans/) and [Configuration Files (New)](https://eslint.org/docs/latest/use/configure/configuration-files-new).
 
 ### `formatter`
 
