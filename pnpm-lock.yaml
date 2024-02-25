@@ -18,8 +18,8 @@ dependencies:
     specifier: ^1.1.1
     version: 1.1.1
   vite-plugin-eslint2:
-    specifier: ^4.3.1
-    version: 4.3.1(@types/eslint@8.37.0)(eslint@8.45.0)(rollup@3.26.3)(vite@4.3.9)
+    specifier: ^4.4.0
+    version: 4.4.0(@types/eslint@8.37.0)(eslint@8.45.0)(rollup@3.26.3)(vite@4.3.9)
 
 devDependencies:
   '@nuxt/module-builder':
@@ -1141,7 +1141,7 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2(rollup@3.26.3)
+      '@rollup/pluginutils': 5.1.0(rollup@3.26.3)
       commondir: 1.0.1
       estree-walker: 2.0.2
       glob: 8.1.0
@@ -1159,7 +1159,7 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2(rollup@3.26.3)
+      '@rollup/pluginutils': 5.1.0(rollup@3.26.3)
       commondir: 1.0.1
       estree-walker: 2.0.2
       glob: 8.1.0
@@ -1177,7 +1177,7 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2(rollup@3.26.3)
+      '@rollup/pluginutils': 5.1.0(rollup@3.26.3)
       estree-walker: 2.0.2
       magic-string: 0.27.0
       rollup: 3.26.3
@@ -1192,7 +1192,7 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2(rollup@3.26.3)
+      '@rollup/pluginutils': 5.1.0(rollup@3.26.3)
       rollup: 3.26.3
     dev: true
 
@@ -1205,7 +1205,7 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2(rollup@3.26.3)
+      '@rollup/pluginutils': 5.1.0(rollup@3.26.3)
       '@types/resolve': 1.20.2
       deepmerge: 4.3.1
       is-builtin-module: 3.2.1
@@ -1223,7 +1223,7 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2(rollup@3.26.3)
+      '@rollup/pluginutils': 5.1.0(rollup@3.26.3)
       magic-string: 0.27.0
       rollup: 3.26.3
     dev: true
@@ -1276,6 +1276,7 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.1
       rollup: 3.26.3
+    dev: true
 
   /@rollup/pluginutils@5.1.0(rollup@3.26.3):
     resolution: {integrity: sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g==}
@@ -1290,7 +1291,6 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.1
       rollup: 3.26.3
-    dev: false
 
   /@sinclair/typebox@0.27.8:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
@@ -1666,7 +1666,7 @@ packages:
         optional: true
     dependencies:
       '@babel/types': 7.21.5
-      '@rollup/pluginutils': 5.0.2(rollup@3.26.3)
+      '@rollup/pluginutils': 5.1.0(rollup@3.26.3)
       '@vue/compiler-sfc': 3.3.4
       local-pkg: 0.4.3
       magic-string-ast: 0.1.2
@@ -2384,6 +2384,21 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.2
+
+  /chokidar@3.6.0:
+    resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
+    engines: {node: '>= 8.10.0'}
+    dependencies:
+      anymatch: 3.1.3
+      braces: 3.0.2
+      glob-parent: 5.1.2
+      is-binary-path: 2.1.0
+      is-glob: 4.0.3
+      normalize-path: 3.0.0
+      readdirp: 3.6.0
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: false
 
   /chownr@2.0.0:
     resolution: {integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==}
@@ -4713,7 +4728,7 @@ packages:
       '@rollup/plugin-replace': 5.0.2(rollup@3.26.3)
       '@rollup/plugin-terser': 0.4.3(rollup@3.26.3)
       '@rollup/plugin-wasm': 6.1.3(rollup@3.26.3)
-      '@rollup/pluginutils': 5.0.2(rollup@3.26.3)
+      '@rollup/pluginutils': 5.1.0(rollup@3.26.3)
       '@types/http-proxy': 1.17.11
       '@vercel/nft': 0.22.6
       archiver: 5.3.1
@@ -6472,7 +6487,7 @@ packages:
   /unimport@3.0.14(rollup@3.26.3):
     resolution: {integrity: sha512-67Rh/sGpEuVqdHWkXaZ6NOq+I7sKt86o+DUtKeGB6dh4Hk1A8AQrzyVGg2+LaVEYotStH7HwvV9YSaRjyT7Uqg==}
     dependencies:
-      '@rollup/pluginutils': 5.0.2(rollup@3.26.3)
+      '@rollup/pluginutils': 5.1.0(rollup@3.26.3)
       escape-string-regexp: 5.0.0
       fast-glob: 3.3.0
       local-pkg: 0.4.3
@@ -6500,7 +6515,7 @@ packages:
         optional: true
     dependencies:
       '@babel/types': 7.21.5
-      '@rollup/pluginutils': 5.0.2(rollup@3.26.3)
+      '@rollup/pluginutils': 5.1.0(rollup@3.26.3)
       '@vue-macros/common': 1.3.1(rollup@3.26.3)(vue@3.3.4)
       ast-walker-scope: 0.4.1
       chokidar: 3.5.3
@@ -6700,12 +6715,12 @@ packages:
       vscode-uri: 3.0.7
     dev: true
 
-  /vite-plugin-eslint2@4.3.1(@types/eslint@8.37.0)(eslint@8.45.0)(rollup@3.26.3)(vite@4.3.9):
-    resolution: {integrity: sha512-J2y5cX4B2JQAgdMSrkU9A42y6RqYPAbEar/DaybuXKptj/NdkJBbdZekkm1YHAFeKm4jj2yg+nhE0ghJAWvBTA==}
+  /vite-plugin-eslint2@4.4.0(@types/eslint@8.37.0)(eslint@8.45.0)(rollup@3.26.3)(vite@4.3.9):
+    resolution: {integrity: sha512-xy5G4Gj18ke1bO5OS0zgyunkPvPy/vSLJFTyMpGmKGKTlYuuhPad3Xy1PWLuqRMoWnuCoFMf2ST1EGhz89uqrA==}
     engines: {node: '>=18'}
     peerDependencies:
-      '@types/eslint': ^7.0.0 || ^8.0.0
-      eslint: ^7.0.0 || ^8.0.0
+      '@types/eslint': ^7.0.0 || ^8.0.0 || ^9.0.0-0
+      eslint: ^7.0.0 || ^8.0.0 || ^9.0.0-0
       rollup: ^2.0.0 || ^3.0.0 || ^4.0.0
       vite: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
     peerDependenciesMeta:
@@ -6714,7 +6729,7 @@ packages:
     dependencies:
       '@rollup/pluginutils': 5.1.0(rollup@3.26.3)
       '@types/eslint': 8.37.0
-      chokidar: 3.5.3
+      chokidar: 3.6.0
       debug: 4.3.4
       eslint: 8.45.0
       rollup: 3.26.3
