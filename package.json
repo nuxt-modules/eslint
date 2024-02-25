@@ -35,7 +35,7 @@
     "chokidar": "^3.5.3",
     "eslint-webpack-plugin": "^4.0.1",
     "pathe": "^1.1.1",
-    "vite-plugin-eslint": "^1.8.1"
+    "vite-plugin-eslint2": "^4.4.0"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",

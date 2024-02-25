@@ -1,7 +1,7 @@
 import { defineNuxtModule, addVitePlugin, addWebpackPlugin, useLogger } from '@nuxt/kit'
-import type { Options as VitePlugin } from 'vite-plugin-eslint'
+import type { ESLintPluginUserOptions as VitePlugin } from 'vite-plugin-eslint2'
 import type { Options as WebpackPlugin } from 'eslint-webpack-plugin'
-import vitePluginEslint from 'vite-plugin-eslint'
+import vitePluginEslint from 'vite-plugin-eslint2'
 import EslintWebpackPlugin from 'eslint-webpack-plugin'
 import { relative } from 'pathe'
 import { watch } from 'chokidar'
@@ -43,7 +43,10 @@ export default defineNuxtModule<ModuleOptions>({
       '.eslintrc.js',
       '.eslintrc.yaml',
       '.eslintrc.yml',
-      '.eslintrc.json'
+      '.eslintrc.json',
+      'eslint.config.js',
+      'eslint.config.mjs',
+      'eslint.config.cjs'
     ].map(path => relative(nuxt.options.rootDir, path))
 
     if (nuxt.options.watch) {
