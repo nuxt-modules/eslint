@@ -46,19 +46,19 @@ npm install -D eslint
 With `pnpm`
 
 ```bash
-pnpm add -D @nuxtjs/eslint-module
+npx nuxi@latest module add eslint
 ```
 
 Or, with `yarn`
 
 ```bash
-yarn add -D @nuxtjs/eslint-module
+npx nuxi@latest module add eslint
 ```
 
 Or, with `npm`
 
 ```bash
-npm install -D @nuxtjs/eslint-module
+npx nuxi@latest module add eslint
 ```
 
 2. Add `@nuxtjs/eslint-module` to the `modules` section of `nuxt.config.ts`
