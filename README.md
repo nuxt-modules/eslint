@@ -43,22 +43,8 @@ npm install -D eslint
 
 1. Add `@nuxtjs/eslint-module` dependency to your project
 
-With `pnpm`
-
 ```bash
-pnpm add -D @nuxtjs/eslint-module
-```
-
-Or, with `yarn`
-
-```bash
-yarn add -D @nuxtjs/eslint-module
-```
-
-Or, with `npm`
-
-```bash
-npm install -D @nuxtjs/eslint-module
+npx nuxi@latest module add eslint
 ```
 
 2. Add `@nuxtjs/eslint-module` to the `modules` section of `nuxt.config.ts`
