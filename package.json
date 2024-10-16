@@ -53,5 +53,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@8.15.4"
+  "packageManager": "pnpm@9.12.2"
 }
