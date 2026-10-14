@@ -34,7 +34,7 @@
     "@nuxt/kit": "^3.10.3",
     "chokidar": "^3.6.0",
     "eslint-webpack-plugin": "^4.0.1",
-    "pathe": "^1.1.2",
+    "pathe": "^2.0.3",
     "vite-plugin-eslint": "^1.8.1"
   },
   "devDependencies": {
